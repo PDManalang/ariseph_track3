@@ -1,7 +1,7 @@
 import React from 'react'
 import AnnounceSummary from './announceSummary'
 
-function announceList({projects}) {
+function AnnounceList({projects}) {
     return (
         <div className="project-list section">
 
@@ -15,4 +15,4 @@ function announceList({projects}) {
     )
 }
 
-export default announceList
+export default AnnounceList
