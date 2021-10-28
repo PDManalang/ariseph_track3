@@ -1,0 +1,28 @@
+.header{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.1px solid lightgray;
+    padding-top: 10px;
+}
+
+.header_left  > img {
+    object-fit: contain;
+    float: left;
+    height: 50px;
+}
+
+.header_menubar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+}
+
+.header_right > img {
+    float: left;
+    object-fit: contain;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 30px;
+}
