@@ -1,8 +1,5 @@
 import React from 'react';
 
-//Material UI
-import Button from '@mui/material/Button';
-
 import './Header.css'
 
 const Header = () => {
@@ -12,9 +9,9 @@ const Header = () => {
                 <img src="https://www.arise.ph/wp-content/uploads/2021/10/arise-new-logo-small-high-res.png" alt="arise-logo"></img>
                 
                 <div className="header_menubar">
-                    <Button>Home</Button>
-                    <Button>Archive</Button>
-                    <Button>Calendar</Button>
+                    <button>Home</button>
+                    <button>Home</button>
+                    <button>Home</button>
                 </div>
 
             </div>
@@ -24,7 +21,7 @@ const Header = () => {
                 <img src="https://www.apc.edu.ph/wp-content/uploads/2019/10/03_Seal-of-APC.png" alt="apc-logo"></img>
 
                 <div className="header_menubar">
-                    <Button>My Profile</Button>
+                    <button>Home</button>
                 </div>
 
             </div>
