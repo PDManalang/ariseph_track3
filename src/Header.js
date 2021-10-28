@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import './Header.css'
 
@@ -12,6 +13,7 @@ const Header = () => {
                     <button>Home</button>
                     <button>Archive</button>
                     <button>About</button>
+                    <Link to = "/create">  Create Post </Link>
                 </div>
 
             </div>
