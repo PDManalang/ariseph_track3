@@ -10,8 +10,8 @@ const Header = () => {
                 
                 <div className="header_menubar">
                     <button>Home</button>
-                    <button>Home</button>
-                    <button>Home</button>
+                    <button>Archive</button>
+                    <button>About</button>
                 </div>
 
             </div>
@@ -21,7 +21,7 @@ const Header = () => {
                 <img src="https://www.apc.edu.ph/wp-content/uploads/2019/10/03_Seal-of-APC.png" alt="apc-logo"></img>
 
                 <div className="header_menubar">
-                    <button>Home</button>
+                    <button>My Profile</button>
                 </div>
 
             </div>
