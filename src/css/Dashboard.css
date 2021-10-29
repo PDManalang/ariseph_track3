@@ -1,0 +1,9 @@
+.dashboard{
+    background-color: antiquewhite;
+}
+
+.post_card{
+    margin: 10px;
+    padding: 10px;
+    width: 25%;
+}

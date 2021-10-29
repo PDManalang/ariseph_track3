@@ -1,0 +1,13 @@
+.card{
+    padding: 10px;
+}
+
+.card_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Customized Materialize CSS */
+.grey-text{
+    font-size: 12px;
+}

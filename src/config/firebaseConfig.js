@@ -8,15 +8,10 @@ import "firebase/compat/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC3MWP2_4fzlH46qY8Vt8hsrZ_KhtAn61M",
-
   authDomain: "my-app-983f1.firebaseapp.com",
-
   projectId: "my-app-983f1",
-
   storageBucket: "my-app-983f1.appspot.com",
-
   messagingSenderId: "1090705762977",
-
   appId: "1:1090705762977:web:9f748a4bf7c3c22dcddee0",
 };
 

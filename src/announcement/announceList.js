@@ -1,14 +1,16 @@
 import React from 'react'
-import AnnounceSummary from './announceSummary'
+
+//Component
+import Summary from "./Summary"
 
 function AnnounceList({projects}) {
     return (
-        <div className="project-list section">
+        <div>
 
             { projects && projects.map(project => {
                 return (
-                    <AnnounceSummary project={project} key={project.id} />
-                )
+                    <Summary project={project} key={project.id} />
+                )//figure out how to limit the cards being showed
             })}
             
         </div>

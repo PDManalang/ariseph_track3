@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+//CSS
+import './css/App.css';
 
 //Component
 import Header from './Header';
+import Dashboard from './Dashboard';
 import createAnnounce from './announcement/createAnnounce';
 import AnnounceDetails from './announcement/announceDetails';
-import Dashboard from './Dashboard';
+
 
 function App() {
   return (
