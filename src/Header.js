@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import './Header.css'
+//CSS
+import './css/Header.css'
 
 const Header = () => {
     return(
@@ -10,10 +11,8 @@ const Header = () => {
                 <img src="https://www.arise.ph/wp-content/uploads/2021/10/arise-new-logo-small-high-res.png" alt="arise-logo"></img>
                 
                 <div className="header_menubar">
-                    <button>Home</button>
-                    <button>Archive</button>
-                    <button>About</button>
-                    <Link to = "/create">  Create Post </Link>
+                    <Link to = "/">Home</Link>
+                    <Link to = "/create">Create Post</Link>
                 </div>
 
             </div>

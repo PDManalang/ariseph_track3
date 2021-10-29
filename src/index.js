@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
@@ -11,6 +10,9 @@ import { createFirestoreInstance, reduxFirestore, getFirestore } from "redux-fir
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import firebaseConfig from "./config/firebaseConfig";
 import firebase from "firebase/compat/app";
+
+//CSS
+import './css/index.css';
 
 const store = createStore(rootReducer,
   compose(
