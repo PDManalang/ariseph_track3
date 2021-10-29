@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import AnnounceList from './announcement/announceList';
 import { connect } from "react-redux";
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux';
+
+//Components
+import AnnounceList from './post/announceList';
 
 //CSS
 import './css/Dashboard.css'

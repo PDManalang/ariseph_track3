@@ -7,8 +7,8 @@ import './css/App.css';
 //Component
 import Header from './Header';
 import Dashboard from './Dashboard';
-import createAnnounce from './announcement/createAnnounce';
-import AnnounceDetails from './announcement/announceDetails';
+import createAnnounce from './post/createAnnounce';
+import AnnounceDetails from './post/announceDetails';
 
 
 function App() {

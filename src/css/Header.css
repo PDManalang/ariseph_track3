@@ -19,6 +19,10 @@
     float: left;
 }
 
+.header_menubar > a {
+    margin-left: 10px;
+}
+
 .header_right > img {
     float: left;
     object-fit: contain;
