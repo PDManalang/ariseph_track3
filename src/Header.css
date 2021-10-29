@@ -22,7 +22,8 @@
 .header_right > img {
     float: left;
     object-fit: contain;
+    margin-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    height: 30px;
+    height: 50px;
 }
