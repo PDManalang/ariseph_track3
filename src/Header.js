@@ -2,30 +2,37 @@ import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 
 //CSS
+import Dropdown from './Dropdown';
 import './css/Header.css'
 
 const Header = () => {
-    const onMouseEnter = () => {
-        if (window.innerWidth < 960) {
-          setDropdown(false);
-        } else {
-          setDropdown(true);
-        }
-      };
-    
-      const onMouseLeave = () => {
-        if (window.innerWidth < 960) {
-          setDropdown(false);
-        } else {
-          setDropdown(false);
-        }
-      };
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = () => {
+      if (window.innerWidth < 960) {
+        setDropdown(false);
+      } else {
+        setDropdown(true);
+      }
+    };
+  
+    const onMouseLeave = () => {
+      if (window.innerWidth < 960) {
+        setDropdown(false);
+      } else {
+        setDropdown(false);
+      }
+    };
 
     return (
         <>
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-        <img src="https://www.arise.ph/wp-content/uploads/2021/10/arise-new-logo-small-high-res.png" alt="arise-logo"></img>
+          <img src="https://www.arise.ph/wp-content/uploads/2021/10/arise-new-logo-small-high-res.png" alt="arise-logo"></img>
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
