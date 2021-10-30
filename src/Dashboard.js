@@ -15,10 +15,10 @@ class Dashboard extends Component {
     const { projects } = this.props;
 
     return (
-      <div className="dashboard">        
-        <div className="post_card">
+      <div className="container">        
+        {/* <div className="post_card"> */}
           <AnnounceList projects={projects} />
-        </div>
+        {/* </div> */}
       </div>
     );
   }

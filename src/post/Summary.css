@@ -1,13 +1,91 @@
-.card{
-    padding: 10px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.card_title{
-    font-size: 20px;
-    font-weight: bold;
+body {
+    background: #fefefe;
+    font-family: sans-serif;
 }
 
-/* Customized Materialize CSS */
-.grey-text{
-    font-size: 12px;
+.container {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.card {
+    width: 30%;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card-header {
+    text-align: center;
+    padding: 50px 10px;
+    background: linear-gradient(125deg, 
+        rgba(13,84,153,1) 0%, 
+        rgba(89,65,144,1) 65%, 
+        rgba(168,45,134,1) 100%);    
+    color: #fff;
+}
+
+.card-body {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.card-body .btn {
+    display: block;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(125deg, 
+        rgba(13,84,153,1) 0%, 
+        rgba(89,65,144,1) 65%, 
+        rgba(168,45,134,1) 100%); 
+    margin-top: 30px;
+    text-decoration: none;
+    padding: 10px 5px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1000px) {
+    .card {
+            width: 40%;
+        }
+}
+
+@media screen and (max-width: 620px) {
+    .container {
+        width: 100%;
+    }
+
+    .heading {
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .card {
+        width: 80%;
+    }
 }

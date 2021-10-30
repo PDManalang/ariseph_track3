@@ -5,15 +5,19 @@ import './Summary.css'
 
 function Summary({project}) {
   return (
-    <div className="card">
-      <div>
-        <span className="card_title">{project.title}</span>
-        {/* <p>{project.content}</p>  cut content details*/}
-        <div> Posted by {project.authorFirstName} {project.authorLastName}{" "} </div>
-        <p className="grey-text">time and date created</p>
-        {/* no idea how to get the timestamp */}
+    <div class="container">
+    <div class="row">
+      <div class="card">
+        <div class="card-header">
+          <h1>{project.title}</h1>
+        </div>
+        <div class="card-body">
+          Posted by {project.authorFirstName} {project.authorLastName}{" "}
+          <a href="#" class="btn">Read more</a>
+        </div>
       </div>
     </div>
+  </div>
   );
 }
 

@@ -1,9 +1,11 @@
 .dashboard{
-    background-color: antiquewhite;
+    background-color: #fdfdfd;
 }
 
-.post_card{
-    margin: 10px;
-    padding: 10px;
-    width: 25%;
+.container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
 }
