@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 //CSS
 import './css/App.css';
@@ -16,12 +18,13 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Header />
-        <Switch>
-          <Route path='/' component={Dashboard} exact/>
-          <Route path='/create' component={createAnnounce} />
-          <Route path='/project/:id' component={AnnounceDetails} />
-        </Switch>
-      </div>
+        <ReactNotification />
+          <Switch>
+            <Route path='/' component={Dashboard} exact/>
+            <Route path='/create' component={createAnnounce} />
+            <Route path='/project/:id' component={AnnounceDetails} />
+          </Switch>
+    </div>
     </BrowserRouter>
   );
 }
