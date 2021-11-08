@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createProject } from '../store/actions/projectActions'
 
+import './createAnnounce.css'
+
 export class createAnnounce extends Component {
 
     state ={
@@ -23,19 +25,19 @@ export class createAnnounce extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="post-container">
                 <form onSubmit= {this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Create New Post</h5>
+                    <h5 className="heading">Create New Post</h5>
                     <div className="input-field">
-                        <label htmlFor="title">Title</label>
+                        <label htmlFor="title" className="title">Title</label>
                         <input type="text" id="title" onChange={this.handleChange} />
                     </div>
                     <div className="input-field">
-                        <label htmlFor="content"> Description </label>
-                        <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
+                        <label htmlFor="content" className="content"> Description </label>
+                        <textarea id="content" className="content-textarea" onChange={this.handleChange}></textarea>
                     </div>
                     <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Create</button>
+                        <button className="btn">Create</button>
                     </div>
                 </form>
 

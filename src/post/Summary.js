@@ -6,18 +6,17 @@ import './Summary.css'
 function Summary({project}) {
   return (
     <div class="container">
-    <div class="row">
-      <div class="card">
-        <div class="card-header">
-          <h1>{project.title}</h1>
-        </div>
-        <div class="card-body">
-          Posted by {project.authorFirstName} {project.authorLastName}{" "}
-          <a href="#" class="btn">Read more</a>
+      <div class="">
+        <div class="card">
+          <div class="card-title">
+            <h2>{project.title}</h2>
+          </div>
+          <div class="card-body">
+            Posted by {project.authorFirstName} {project.authorLastName}{" "}
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 }
 

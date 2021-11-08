@@ -3,20 +3,22 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
+import './announceDetails.css';
+
 function AnnounceDetails(props) {
   const { project } = props;
   if (project) {
     return (
-      <div className="container section project-details">
+      <div className="post-container">
         {/* detailed post */}
-        <div className="card z-depth-0">
+        <div className="">
           <div className="card-content">
-            <span className="card-title"> {project.title} </span>
-            <p>{project.content}</p>
+            <h5 class="post-title"> {project.title} </h5>
+            <div className="post-sub">Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
+            <div className="post-sub">Sample Date</div>
           </div>
-          <div className="card-action grey lighten-4 grey-text">
-            <div>Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
-            <div>Sample Date</div>
+          <div className="post-content">
+            <p>{project.content}</p>
           </div>
         </div>
       </div>
