@@ -10,16 +10,18 @@ function AnnounceDetails(props) {
   if (project) {
     return (
       <div className="post-container">
-        {/* detailed post */}
         <div className="">
           <div className="card-content">
+             {/* title, post author, date */}
             <h5 class="post-title"> {project.title} </h5>
             <div className="post-sub">Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
             <div className="post-sub">Sample Date</div>
           </div>
-          <div className="post-content">
-            <p>{project.content}</p>
+
+          {/* content */}
+          <div className="post-content" dangerouslySetInnerHTML={{__html: project.content}}>
           </div>
+
         </div>
       </div>
     );

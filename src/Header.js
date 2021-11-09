@@ -67,6 +67,11 @@ const Header = () => {
             </Link>
             {dropdown && <Dropdown />}
           </li>
+          <li className='nav-item'>
+            <Link to='/create' className='nav-links' onClick={closeMobileMenu}>
+              Create Post
+            </Link>
+          </li>
         </ul>
       </nav>
         </>
