@@ -4,6 +4,7 @@ import { createProject } from '../store/actions/projectActions'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 
+import Tag from '../tags/Tag';
 import './createAnnounce.css'
 import ProgressBar from './ProgressBar';
 
@@ -80,6 +81,9 @@ function CreateAnnounce () {
               { file && <div> { file.name } </div> }
               { file && <ProgressBar file={file} setFile={setFile} /> }
             </div>
+                    <label htmlFor="content" className="content">Add a Tag</label>
+                        <Tag />
+                    </div>
 
                     <div className="input-field">
                         <button className="btn">Create</button>
