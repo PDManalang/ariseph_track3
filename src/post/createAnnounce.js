@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect, useDispatch } from 'react-redux'
 import { createProject } from '../store/actions/projectActions'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ckeditor, { CKEditor } from '@ckeditor/ckeditor5-react';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 import './createAnnounce.css'
 import ProgressBar from './ProgressBar';
