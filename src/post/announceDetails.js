@@ -9,13 +9,14 @@ import './announceDetails.css';
 import useFirestore from '../store/hooks/useFirestore';
 
 function AnnounceDetails(props) {
-  const { project } = props;
+  const { project, docs } = props; 
   if (project) {
     return (
       <div className="post-container">
         <div className="">
           <div className="card-content">
              {/* title, post author, date */}
+            {/* <image src = {docs.url} /> */}
             <h5 class="post-title"> {project.title} </h5>
             <div className="post-sub">Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
             <div className="post-sub">Sample Date</div>
