@@ -49,6 +49,9 @@ export class createAnnounce extends Component {
 
                         <CKEditor
                         editor={ClassicEditor}
+                        config={{
+                            toolbar: [ 'bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList', '|', 'Link' ]
+                          }}
                         onInit={ editor =>{
                         }}
 

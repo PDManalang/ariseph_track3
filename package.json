@@ -8,6 +8,8 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@mui/material": "^5.0.6",
+    "@react-native-firebase/analytics": "^13.0.1",
+    "@react-native-firebase/storage": "^13.0.1",
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

@@ -14,7 +14,7 @@ function AnnounceList({projects}) {
                     <Link to = {'/project/' + project.id } key={project.id} style={{textDecoration:"none"}}>
                     <Summary project={project}/>
                     </Link>
-                )//figure out how to limit the cards being showed
+                )
             })}
             </div>
         </div>
