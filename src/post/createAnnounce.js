@@ -1,46 +1,56 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { useState } from 'react'
+import { connect, useDispatch } from 'react-redux'
 import { createProject } from '../store/actions/projectActions'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ckeditor, { CKEditor } from '@ckeditor/ckeditor5-react';
 
 import './createAnnounce.css'
+import ProgressBar from './ProgressBar';
 
-export class createAnnounce extends Component {
+function CreateAnnounce () {
+    const dispatch = useDispatch();
+    const [project, setCreateProject] = useState ({
+        title: "",
+        content: "",
+      })
 
-    state ={
-        title:'',
-        content: ''
-    }
+    const [file, setFile] = useState (null);
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        })
-    }
+    // handleChange = (e) => {
+    //     this.setState({
+    //         [e.target.id]: e.target.value
+    //     })
+    // }
+    
+    const handleUpload = (e) => {
+        let selected = e.target.files[0];
+        if (selected) { 
+          setFile(selected);
+        } else {
+          setFile(null);
+        }}
 
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         //console.log(this.state)
-        this.props.createProject(this.state)
+        dispatch(createProject(project));
     }
 
-    handleCkeditorState=(e, editor) =>{
+    const handleCkeditorState=(e, editor) =>{
         const data = editor.getData();
-        this.setState({
+        setCreateProject({
+            ...project,
             content: data
         })
         console.log(data);
     }
-
-    render() {
         return (
             <div className="post-container">
-                <form onSubmit= {this.handleSubmit} className="white">
+                <form onSubmit= {handleSubmit} className="white">
                     <h5 className="heading">Create New Post</h5>
                     <div className="input-field">
                         <label htmlFor="title" className="title">Title</label>
-                        <input type="text" id="title" onChange={this.handleChange} />
+                        <input type="text" id="title" onChange={(e) => setCreateProject({...project,title: e.target.value})}/>
                     </div>
                     <div className="input-field">
                         <label htmlFor="content" className="content">Description</label>
@@ -55,10 +65,22 @@ export class createAnnounce extends Component {
                         onInit={ editor =>{
                         }}
 
-                        onChange={this.handleCkeditorState}
+                        onChange={handleCkeditorState}
                         />
-
                     </div>
+
+                    <input
+              type="file"
+              onChange={handleUpload}
+              //style={{ opacity: 0, position: "absolute", left: "-9999px" }}
+            />
+             {/* </label> */}
+
+            <div className="output">
+              { file && <div> { file.name } </div> }
+              { file && <ProgressBar file={file} setFile={setFile} /> }
+            </div>
+
                     <div className="input-field">
                         <button className="btn">Create</button>
                     </div>
@@ -66,7 +88,7 @@ export class createAnnounce extends Component {
             </div>
         )
     }
-}
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -74,4 +96,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(createAnnounce)
+export default connect(null, mapDispatchToProps)(CreateAnnounce)

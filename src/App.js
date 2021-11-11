@@ -11,7 +11,7 @@ import Header from './Header';
 import Dashboard from './Dashboard';
 import createAnnounce from './post/createAnnounce';
 import AnnounceDetails from './post/announceDetails';
-
+import Archive from './archive/Archive'
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
             <Route path='/' component={Dashboard} exact/>
             <Route path='/create' component={createAnnounce} />
             <Route path='/project/:id' component={AnnounceDetails} />
+            <Route path='/archive'component={Archive} />
           </Switch>
     </div>
     </BrowserRouter>
