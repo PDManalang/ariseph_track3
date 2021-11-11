@@ -6,6 +6,7 @@ import { compose } from "redux";
 
 
 import './announceDetails.css';
+import useFirestore from '../store/hooks/useFirestore';
 
 function AnnounceDetails(props) {
   const { project } = props;

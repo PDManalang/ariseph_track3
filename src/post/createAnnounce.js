@@ -3,13 +3,14 @@ import { connect, useDispatch } from 'react-redux'
 import { createProject } from '../store/actions/projectActions'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-
+import { useHistory } from 'react-router';
 import Tag from '../tags/Tag';
 import './createAnnounce.css'
 import ProgressBar from './ProgressBar';
 
 function CreateAnnounce () {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [project, setCreateProject] = useState ({
         title: "",
         content: "",
@@ -22,6 +23,7 @@ function CreateAnnounce () {
     //         [e.target.id]: e.target.value
     //     })
     // }
+
     
     const handleUpload = (e) => {
         let selected = e.target.files[0];
@@ -35,6 +37,8 @@ function CreateAnnounce () {
         e.preventDefault();
         //console.log(this.state)
         dispatch(createProject(project));
+        let path = `/`; 
+        history.push(path);
     }
 
     const handleCkeditorState=(e, editor) =>{
@@ -44,6 +48,22 @@ function CreateAnnounce () {
             content: data
         })
         console.log(data);
+    }
+
+    const options = [
+        { value: 'disaster', label: 'Disaster Risk Management Strategies' },
+        { value: 'educ', label: 'Education and Training' },
+        { value: 'urban', label: 'Urban Risk Reduction and Resilience' },
+        { value: 'business', label: 'Small and Medium Businesses' },
+        { value: 'invest', label: 'Investors and Investments' },
+        { value: 'insur', label: 'Insurance' },
+        { value: 'infra', label: 'Resilient Infrastructure' },
+        { value: 'org', label: 'Organizational Matters' },
+        { value: 'proj', label: 'Spacial Projects' }
+      ]
+
+    function onChangeInput(value){
+        console.log(value);
     }
         return (
             <div className="post-container">
@@ -70,19 +90,24 @@ function CreateAnnounce () {
                         />
                     </div>
 
-                    <input
-              type="file"
-              onChange={handleUpload}
-              //style={{ opacity: 0, position: "absolute", left: "-9999px" }}
-            />
-             {/* </label> */}
 
-            <div className="output">
-              { file && <div> { file.name } </div> }
-              { file && <ProgressBar file={file} setFile={setFile} /> }
-            </div>
+                    <input
+                        type="file"
+                        onChange={handleUpload}
+                        //style={{ opacity: 0, position: "absolute", left: "-9999px" }}
+                        />
+                    
+
+                        {/* </label> */}
+
+                    <div className="output">
+                    { file && <div> { file.name } </div> }
+                    { file && <ProgressBar file={file} setFile={setFile} /> }
+                    </div>
+                    
+                    <div className="tag">
                     <label htmlFor="content" className="content">Add a Tag</label>
-                        <Tag />
+                        <Tag options={options} defaultValue="Select..." onChange={onChangeInput} isMulti={true} />
                     </div>
 
                     <div className="input-field">

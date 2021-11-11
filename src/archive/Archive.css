@@ -1,0 +1,58 @@
+.header {
+    font-size: 40px;
+    text-align: center;
+    background: rgb(13,84,153);
+    background: linear-gradient(352deg, rgba(13,84,153,1) 0%, rgba(71,70,139,1) 18%, rgba(137,54,124,1) 47%, rgba(224,120,61,1) 100%);
+    color: white;
+}
+
+.file-container {
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    /* border-radius: 4px; */
+    margin-bottom: 20px;
+}
+
+.file-name {
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: #0d5499;
+}
+
+.file-sub {
+    padding-top: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: #9c9c9c;
+}
+
+/* Animation */
+.wrapper {
+    height: 50vh;
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
