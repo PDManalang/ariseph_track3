@@ -5,8 +5,6 @@ import './Summary.css'
 
 function Summary({project}) {
   return (
-    <div class="container">
-      <div class="">
         <div class="card">
           <div class="card-title">
             <h2>{project.title}</h2>
@@ -15,8 +13,6 @@ function Summary({project}) {
             Posted by {project.authorFirstName} {project.authorLastName}{" "}
           </div>
         </div>
-      </div>
-    </div>
   );
 }
 

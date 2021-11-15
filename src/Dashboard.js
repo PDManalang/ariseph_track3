@@ -13,13 +13,19 @@ import './css/Dashboard.css'
 class Dashboard extends Component {
   render() {
     const { projects } = this.props;
-
     return (
-      <div className="container">        
-        {/* <div className="post_card"> */}
-          <AnnounceList projects={projects} />
-        {/* </div> */}
-      </div>
+      <>
+        <section id="main-dashboard-content">
+          <section id="grid-container">
+            <div class="grid-item one">
+                <AnnounceList projects={projects} />
+            </div>
+            <div class="grid-item two">Item 2</div>
+            <div class="grid-item three">Item 3</div>
+            <div class="grid-item four">Item 4</div>
+          </section>
+        </section>
+      </>
     );
   }
 }

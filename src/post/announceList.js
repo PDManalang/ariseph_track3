@@ -7,7 +7,7 @@ import './Summary.css'
 
 function AnnounceList({projects}) {
     return (
-        <div class="list">
+        <div class="">
             <div>
             { projects && projects.map(project => {
                 return (
