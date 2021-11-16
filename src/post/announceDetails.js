@@ -16,7 +16,6 @@ function AnnounceDetails(props) {
         <div className="">
           <div className="card-content">
              {/* title, post author, date */}
-            {/* <image src = {docs.url} /> */}
             <h5 class="post-title"> {project.title} </h5>
             <div className="post-sub">Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
             <div className="post-sub">Sample Date</div>

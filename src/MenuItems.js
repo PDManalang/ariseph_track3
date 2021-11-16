@@ -13,5 +13,7 @@ export const MenuItems = [
       title: 'Sign Out',
       path: '/signout',
       cName: 'dropdown-link'
-    },
+    }
   ];
+
+

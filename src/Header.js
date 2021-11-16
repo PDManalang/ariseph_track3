@@ -74,4 +74,11 @@ const Header = () => {
     
 }
 
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    
+  }
+}
+
 export default Header;

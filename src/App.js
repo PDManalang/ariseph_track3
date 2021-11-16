@@ -12,6 +12,8 @@ import Dashboard from './Dashboard';
 import createAnnounce from './post/createAnnounce';
 import AnnounceDetails from './post/announceDetails';
 import Archive from './archive/Archive'
+import SignIn from '../src/auth/SignIn'
+import SignUp from './auth/SignUp';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path='/create' component={createAnnounce} />
             <Route path='/project/:id' component={AnnounceDetails} />
             <Route path='/archive'component={Archive} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
           </Switch>
     </div>
     </BrowserRouter>
