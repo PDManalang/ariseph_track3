@@ -1,84 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import HeaderSignedIn from "./HeaderSignedIn";
+import HeaderSignedOut from "./HeaderSignedOut";
+import { connect } from 'react-redux';
 
-//CSS
-import Dropdown from './Dropdown';
-import './css/Header.css'
-
-const Header = () => {
+const Header = (props) => {
+  const { auth, profile } = props;
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
-
-  const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = () => {
-      if (window.innerWidth < 960) {
-        setDropdown(false);
-      } else {
-        setDropdown(true);
-      }
-    };
-  
-    const onMouseLeave = () => {
-      if (window.innerWidth < 960) {
-        setDropdown(false);
-      } else {
-        setDropdown(false);
-      }
-    };
-
-    return (
-        <>
-      <nav className='navbar'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+  const handleClick = () => setClick(!click);
+  // console.log(auth);
+  const links = auth.uid ? <HeaderSignedIn profile={profile} /> : <HeaderSignedOut />;
+  return (
+    <nav className="navbar">
+      <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <img src="https://www.arise.ph/wp-content/uploads/2021/10/arise-new-logo-small-high-res.png" alt="arise-logo"></img>
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Calendar
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/archive' className='nav-links' onClick={closeMobileMenu}>
-              Archive
-            </Link>
-          </li>
-          <li
-            className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link
-              to='/profile'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              My Profile <i className='fas fa-caret-down' />
-            </Link>
-            {dropdown && <Dropdown />}
-          </li>
-        </ul>
-      </nav>
-        </>
-    );
-    
+        { links }
+    </nav>
+  )
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    
+  console.log(state)
+  return{
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
   }
 }
 
-export default Header;
+export default connect(mapStateToProps)(Header)

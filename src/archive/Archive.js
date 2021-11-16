@@ -1,10 +1,15 @@
 import React from 'react';
 import useFirestore from '../store/hooks/useFirestore';
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom'
 
 import './Archive.css'
 
 const Archive = () => {
     const { docs } = useFirestore('files');
+    const auth = useSelector((state) => state.firebase.auth)
+    if (!auth.uid) { return <Redirect to='/signin' /> }
+
     console.log(docs)
     return (
         <>

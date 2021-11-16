@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { connect, useDispatch } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import { createProject } from '../store/actions/projectActions'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -7,10 +7,13 @@ import { useHistory } from 'react-router';
 import Tag from '../tags/Tag';
 import './createAnnounce.css'
 import ProgressBar from './ProgressBar';
+import { render } from '@testing-library/react';
+import { Redirect } from "react-router-dom";
 
 function CreateAnnounce () {
     const dispatch = useDispatch();
     const history = useHistory();
+    const auth = useSelector((state) => state.firebase.auth)
     const [project, setCreateProject] = useState ({
         title: "",
         content: "",
@@ -65,6 +68,9 @@ function CreateAnnounce () {
     function onChangeInput(value){
         console.log(value);
     }
+        
+    if (!auth.uid) { return <Redirect to='/signin' /> }
+    
         return (
             <div className="post-container">
                 <form onSubmit= {handleSubmit} className="white">
@@ -119,10 +125,16 @@ function CreateAnnounce () {
     }
 
 
+const mapStateToProps = (state) => {
+    return{
+        auth: state.firebase.auth
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         createProject: (project) => dispatch(createProject(project))
     }
 }
 
-export default connect(null, mapDispatchToProps)(CreateAnnounce)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateAnnounce)

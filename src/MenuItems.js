@@ -1,19 +1,20 @@
 export const MenuItems = [
     {
-      title: 'Edit Profile',
+      title1: 'Edit Profile',
       path: '/create',
       cName: 'dropdown-link'
     },
     {
-      title: 'Create Post',
+      title2: 'Create Post',
       path: '/create',
       cName: 'dropdown-link'
     },
     {
-      title: 'Sign Out',
-      path: '/signout',
+      title3: 'Sign Out',
+      path: '/signin',
       cName: 'dropdown-link'
     }
   ];
+
 
 
