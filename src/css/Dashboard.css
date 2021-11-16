@@ -61,7 +61,7 @@
     width: 400px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
     padding: 15px 25px;
-    border-radius: 15px;
+    border-radius: 10px;
   }
   
   .input-box input {
@@ -115,11 +115,20 @@
   .grid-item {
     height: 350px;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
+    border-radius: 10px;
     box-sizing: border-box;
-    padding: 50px;
+    padding: 20px;
     overflow: scroll;
+  }
 
+  .three {
+    height: 350px;
+    width: 100%;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow: scroll;
   }
   
   @media (max-width: 1400px) {

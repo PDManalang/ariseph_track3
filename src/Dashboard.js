@@ -5,7 +5,8 @@ import { compose } from 'redux';
 
 //Components
 import AnnounceList from './post/announceList';
-
+import Calendar from './calendar/Calendar';
+import Slider from './slider/slider';
 //CSS
 import './css/Dashboard.css'
 
@@ -17,12 +18,21 @@ class Dashboard extends Component {
       <>
         <section id="main-dashboard-content">
           <section id="grid-container">
+            {/* Main Announcement */}
             <div class="grid-item one">
-                <AnnounceList projects={projects} />
+            <Slider projects={projects} />
             </div>
-            <div class="grid-item two">Item 2</div>
-            <div class="grid-item three">Item 3</div>
-            <div class="grid-item four">Item 4</div>
+            {/* Calendar */}
+            <div class="grid-item two">
+              <Calendar projects={projects} />
+            </div>
+            {/* Post List */}
+            <div class="grid-item three">
+              <AnnounceList projects={projects} />
+            </div>
+            
+            {/* <div class="grid-item four">
+            </div> */}
           </section>
         </section>
       </>
