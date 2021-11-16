@@ -4,6 +4,7 @@
   background: rgb(13,84,153);
   background: linear-gradient(352deg, rgba(13,84,153,1) 0%, rgba(71,70,139,1) 18%, rgba(137,54,124,1) 47%, rgba(224,120,61,1) 100%);
   color: white;
+  display: inline-block;
 }
 
 .file-container {
@@ -15,7 +16,7 @@
 }
 
 .file-name {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   font-size: 20px;
   color: #0d5499;
   text-overflow: ellipsis;
@@ -34,32 +35,69 @@
   color: #9c9c9c;
 }
 
+
+
 /* Search */
-#top-section {
+.container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
 }
 
-.input-box {
-  display: flex;
-  justify-content: space-between;
-  width: 400px;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
-  padding: 15px 25px;
-  border-radius: 15px;
+.container .searchbox {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  transition: 0.4s linear;
+  overflow: hidden;
+  margin-bottom: 100px;
 }
-
-.input-box input {
+.container .searchbox .searchbox__input {
+  display: inline-block;
+  appearance: none;
+  width: 100%;
   border: none;
   outline: none;
-  width: 100%;
+  border-radius: 50px;
+  /* background-color: #FAFAFA; */
+  padding: 20px;
+  color: #0d5499;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.4s linear;
 }
 
-.input-box i {
-  color: #5f5f5f;
+.container .searchbox .searchbox__input::placeholder {
+  color: #0d5499;
+  opacity: 70%;
 }
-
+.container .searchbox .searchbox__icon {
+  position: absolute;
+  right: calc(53px / 2);  
+  top: 56%;
+  transform: translate(50%, -50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.container .searchbox .searchbox__icon path {
+  fill: #0d5499;
+  transition: 0.4s linear;
+}
+.container .searchbox:focus-within {
+  max-width: 500px;
+}
+.container .searchbox:focus-within .searchbox__input {
+  background-color: #FFF;
+  padding-right: 50px;
+  /* box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4); */
+}
+.container .searchbox:focus-within .searchbox__icon path {
+  fill: #0d5499;
+}
 
 
 /* Animation */
@@ -72,13 +110,16 @@
   }
   
 .typing-demo {
-  width: 22ch;
+  width: 600px;
   animation: typing 2s steps(22), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid;
+  border-right: 2px solid;
   font-size: 2em;
   color: #FAFAFA;
+  margin-top: 100px;
+  flex-wrap: wrap;
+  align-content: center;  
 }
 
 @keyframes typing {
