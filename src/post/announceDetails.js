@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from 'react-router-dom'
-
+import moment from 'moment'
 
 import './announceDetails.css';
 import useFirestore from '../store/hooks/useFirestore';
@@ -19,7 +19,7 @@ function AnnounceDetails(props) {
              {/* title, post author, date */}
             <h5 class="post-title"> {project.title} </h5>
             <div className="post-sub">Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
-            <div className="post-sub">Sample Date</div>
+            <div className="post-sub">{moment(project.createdAt.toDate()).calendar()}</div>
           </div>
 
           {/* content */}
