@@ -3,6 +3,10 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+h2 {
+    font-family: 'Inter', sans-serif;
+}
+
 .card {
     border-bottom: 1px solid #cccccc;
     padding: 10px;
@@ -19,7 +23,7 @@ body {
 }
 
 .card-title {
-    padding: 10px;
+    padding: 5px;
     color: #0d5499;
 }
 

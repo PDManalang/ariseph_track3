@@ -11,6 +11,16 @@ const Archive = () => {
             <div class="header wrapper">
                 <h2 class="typing-demo">Archive</h2>
             </div>
+
+            <section id="top-section">
+                <div class="input-box">
+                <input placeholder="Search..." />
+                <div>
+                    <i class="fas fa-search"></i>
+                </div>
+                </div>
+            </section>
+
             <div className="post-container">
                 <div className="file-grid">
                     { docs && docs.map(doc =>(

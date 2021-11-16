@@ -15,27 +15,39 @@ function Slider() {
 
             <div class="slider__contents">
                 <div className="image-1">
-                    <h2 class="slider__caption">codepen</h2>
-                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                    <div className="center">
+                        <h2 class="slider__caption">earth day</h2>
+                        <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                    </div>
                 </div>
             </div>
 
             <div class="slider__contents">
                 <div className="image-2">
-                    <h2 class="slider__caption">newspaper-o</h2>
-                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                    <div className="center">
+                        <h2 class="slider__caption">mental health awareness</h2>
+                        <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                    </div>
                 </div>
             </div>
 
             <div class="slider__contents">
-                <h2 class="slider__caption">television</h2>
-                <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                <div className="image-3">
+                    <div className="center">
+                        <h2 class="slider__caption">International Day of Older Persons</h2>
+                        <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                    </div>
+                </div>
             </div>
 
             <div class="slider__contents">
-                <h2 class="slider__caption">diamond</h2>
-                <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
-            </div>
+                <div className="image-4">
+                    <div className="center">
+                        <h2 class="slider__caption">donation drive</h2>
+                        <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
