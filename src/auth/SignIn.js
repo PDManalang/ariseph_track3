@@ -28,7 +28,7 @@ export class SignIn extends Component {
         if (auth.uid) return <Redirect to='/' />
         return (
             
-            <div className="wrapper bg">
+            <div className="auth-wrapper bg">
                 <div className="form">
                 <div class="title">
                             Sign In

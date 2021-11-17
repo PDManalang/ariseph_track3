@@ -29,7 +29,7 @@ export class SignUp extends Component {
         if (auth.uid) return <Redirect to='/' />
         return (
             
-            <div className="wrapper bg">
+            <div className="auth-wrapper bg">
             <div className="form">
                 <form onSubmit= {this.handleSubmit} className="white">
                     <div className="title">Sign Up</div>
