@@ -15,11 +15,11 @@ const Header = (props) => {
     <nav className="navbar">
       <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <img src="https://www.arise.ph/wp-content/uploads/2021/10/arise-new-logo-small-high-res.png" alt="arise-logo"></img>
-        </Link>
-        <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-        { links }
+      </Link>
+      <div className='menu-icon' onClick={handleClick}>
+        <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+      </div>
+      { links }
     </nav>
   )
 }

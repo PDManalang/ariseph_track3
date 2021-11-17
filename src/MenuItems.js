@@ -1,16 +1,16 @@
 export const MenuItems = [
+    // {
+    //   title1: 'Edit Profile',
+    //   path: '/create',
+    //   cName: 'dropdown-link'
+    // },
     {
-      title1: 'Edit Profile',
+      title1: 'Create Post',
       path: '/create',
-      cName: 'dropdown-link'
+      // cName: 'dropdown-link'
     },
     {
-      title2: 'Create Post',
-      path: '/create',
-      cName: 'dropdown-link'
-    },
-    {
-      title3: 'Sign Out',
+      title2: 'Sign Out',
       path: '/signin',
       cName: 'dropdown-link'
     }

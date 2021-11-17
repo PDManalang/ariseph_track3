@@ -49,14 +49,16 @@ const HeaderSignedIn = (props) => {
               Archive
             </Link>
           </li>
+          <li className='nav-item'>
+            <NavLink to='/profile' className='round' style={{ textDecoration: 'none' }}> 
+                { props.profile.initials}
+            </NavLink>
+          </li>
           <li
             className='nav-item'
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <NavLink to='/profile' className= ''> 
-              {props.profile.initials}
-            </NavLink>
             <Link
               to='/profile'
               className='nav-links'

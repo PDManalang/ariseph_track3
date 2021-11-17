@@ -7,7 +7,6 @@ import { signOut } from './store/actions/authActions';
 
 function Dropdown(props) {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
 
   return (
@@ -20,17 +19,17 @@ function Dropdown(props) {
           return (
             <li key={index}>
               <Link
-                className={item.cName}
+                className='dropdown-link'                
                 to={item.path}
                 onClick={() => setClick(false)}
               >
                 {item.title1}
-                {item.title2}
               </Link>
-              <Link className={item.cName}
+              <Link 
+                className={item.cName}
                 to={item.path}
                 onClick={props.signOut}>
-                  {item.title3}
+                  {item.title2}
               </Link>
             </li>
           );
