@@ -3,8 +3,9 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../store/actions/authActions'
 
-export class SignUp extends Component {
+import './Auth.css'
 
+export class SignUp extends Component {
     state ={
         email:'',
         password: '',
@@ -27,33 +28,50 @@ export class SignUp extends Component {
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to='/' />
         return (
-            <div className="container">
+            
+            <div className="wrapper bg">
+            <div className="form">
                 <form onSubmit= {this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Sign Up</h5>
-                    <div className="input-field">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" onChange={this.handleChange} />
+                    <div className="title">Sign Up</div>
+                    {/* Email Field */}
+                    <div className="input_wrap">
+                        <div className="input_field">
+                            <label htmlFor="email">Email</label>
+                            <input class="input" type="email" id="email" onChange={this.handleChange} />
+                        </div>
                     </div>
-                    <div className="input-field">
+                    {/* Password Field */}
+                    <div className="input_wrap">
+                    <div className="input_field">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={this.handleChange} />
+                        <input class="input" type="password" id="password" onChange={this.handleChange} />
                     </div>
-                    <div className="input-field">
-                        <label htmlFor="firstName">First Name</label>
-                        <input type="text" id="firstName" onChange={this.handleChange} />
                     </div>
-                    <div className="input-field">
+                    {/* First Name Field */}
+                    <div className="input_wrap">
+                        <div className="input_field">
+                            <label htmlFor="firstName">First Name</label>
+                            <input class="input" type="text" id="firstName" onChange={this.handleChange} />
+                        </div>
+                    </div>
+                    {/* Last Name Field */}
+                    <div className="input_wrap">
+                    <div className="input_field">
                         <label htmlFor="lastName">Last Name</label>
-                        <input type="text" id="lastName" onChange={this.handleChange} />
+                        <input class="input" type="text" id="lastName" onChange={this.handleChange} />
                     </div>
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
-                        <div className="red-text center">
+                    </div>
+                    {/* SignUp Button */}
+                    <div className="input_wrap">
+                    <div className="input_field">
+                        <button className="btn">Sign Up</button>
+                        <div className="error_msg">
                             { authError ? <p>{ authError }</p> : null }
                         </div>
                     </div>
+                    </div>
                 </form>
-
+                </div>
             </div>
         )
     }

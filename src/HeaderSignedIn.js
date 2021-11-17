@@ -54,7 +54,7 @@ const HeaderSignedIn = (props) => {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <NavLink to='/profile' className= 'btn btn-floating pink lighten-1'> 
+            <NavLink to='/profile' className= ''> 
               {props.profile.initials}
             </NavLink>
             <Link

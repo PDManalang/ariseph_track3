@@ -1,0 +1,144 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    color: #5c4b51;
+  } */
+
+/* Animated Background */
+.bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.form{
+    width: 425px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.733);    padding: 35px 50px;
+    border-radius: 20px;
+}
+  
+.form .title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+}
+  
+.form .input_wrap{
+    margin-bottom: 20px;
+    width: 325px;
+    position: relative;
+}
+
+.form .input_wrap:last-child{
+    margin-bottom: 0;
+}
+
+.form .input_wrap label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form .input_wrap input{
+    padding: 15px;
+    width: 100%;
+    border: 1px solid transparent;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.form .input_wrap .input {
+    background: #f5f4f4;
+    padding-right: 35px;
+}
+
+
+.form .input_wrap .input:focus {
+    border-color: #1dbf73;
+}
+
+.form .input_wrap {
+    position: relative;
+}
+
+.form .input_wrap {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+/* .form .input_wrap .btn.disabled {
+    background: #727272;
+} */
+
+/* .form .input_wrap .btn.enabled {
+    background: #1dbf73;
+    cursor: pointer;
+} */
+
+.form .input_wrap .error_msg {
+    font-size: 15px;
+    margin-bottom: 5px; 
+    color: #f74040;
+    display: none;
+}
+
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 3px;    
+    border-radius: 4px;
+    margin-top: 50px;
+    display: block;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    color: #0d5499;
+}
+
+.input_wrap {
+    position: relative;
+}
+
+.input_field {
+    margin-top: 25px;
+    color: #005495;
+}
+
+label {
+    color: #005495;
+    font-size: 18px;
+    display: block;
+}
+
+.title { 
+    color: #005495;
+    display: block;
+    /* text-transform: uppercase; */
+    letter-spacing: 3px;
+}
