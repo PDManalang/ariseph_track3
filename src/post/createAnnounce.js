@@ -27,7 +27,6 @@ function CreateAnnounce () {
     //     })
     // }
 
-    
     const handleUpload = (e) => {
         let selected = e.target.files[0];
         if (selected) { 
