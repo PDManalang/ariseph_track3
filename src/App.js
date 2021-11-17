@@ -14,6 +14,7 @@ import AnnounceDetails from './post/announceDetails';
 import Archive from './archive/Archive'
 import SignIn from '../src/auth/SignIn'
 import SignUp from './auth/SignUp';
+import CalendarScreen from './calendar/Calendar';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path='/create' component={createAnnounce} />
             <Route path='/project/:id' component={AnnounceDetails} />
             <Route path='/archive'component={Archive} />
+            <Route path='/calendar'component={CalendarScreen} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
           </Switch>
