@@ -1,0 +1,9 @@
+.event_handler{
+    margin: 10px;
+}
+
+.event_handler input{
+    
+    display: flex;  
+    width: 25%;
+}

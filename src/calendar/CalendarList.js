@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 //Component
-import './Calendar.css';
 import '../post/Summary.css'
 
 function CalendarList() {
