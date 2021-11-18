@@ -125,12 +125,6 @@ h2 {
     justify-content: space-between;
   }
   
-  #welcome-title {
-    font-size: 24px;
-    font-weight: lighter;
-    margin: 20px 5px;
-  }
-  
   #grid-container {
     display: grid;
     grid-template-columns: 75% auto;

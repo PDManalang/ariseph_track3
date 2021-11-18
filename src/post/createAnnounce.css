@@ -38,13 +38,13 @@ input[type="file"] {
     align-self: center;
 }
 
-.title{
+.create-title{
     font-size: 20px;
     color: #0d5499;
     font-family: 'Inter', sans-serif;
 }
 
-.content {
+.create-label {
     font-size: 20px;
     padding-bottom: 10px;
     color: #0d5499;

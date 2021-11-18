@@ -8,26 +8,36 @@ import moment from 'moment'
 import './announceDetails.css';
 import useFirestore from '../store/hooks/useFirestore';
 
-function AnnounceDetails(props) {
+import AnnounceList from './announceList';
+
+function AnnounceDetails(props, {projects}) {
   const { project, auth } = props;
   if (!auth.uid) return <Redirect to='/signin' />
   if (project) {
     return (
-      <div className="post-container">
-        <div className="">
-          <div className="card-content">
-             {/* title, post author, date */}
-            <h5 class="post-title"> {project.title} </h5>
-            <div className="post-sub">Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
-            <div className="post-sub">{moment(project.createdAt.toDate()).calendar()}</div>
-          </div>
-
-          {/* content */}
-          <div className="post-content" dangerouslySetInnerHTML={{__html: project.content}}>
-          </div>
-
+      <>
+        <div class="post-header content-container">
+          <h5 class="post-typing"> {project.title} </h5>
+          <div className="post-sub">Posted by {project.authorFirstName} {project.authorLastName}{" "}</div>
+          <div className="post-sub">{moment(project.createdAt.toDate()).calendar()}</div>
         </div>
-      </div>
+
+          <div className="row2">
+            <div className="left content">
+              <div className="leftTopContent">
+                <div className="post-content" dangerouslySetInnerHTML={{__html: project.content}}></div>
+              </div>
+            </div>
+
+              
+            <div className="right content">
+              <div className="">
+                <h2>Recent Posts</h2> 
+                <AnnounceList projects={projects} />
+              </div>
+            </div>
+          </div>
+      </>
     );
   } else {
     return (

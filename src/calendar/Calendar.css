@@ -7,3 +7,28 @@
     display: flex;  
     width: 25%;
 }
+
+.cal-header {
+    font-size: 40px;
+    text-align: center;
+    background: rgb(124, 173, 223);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(305deg, #23a6d5, #00b4a0, #f26f35, #e73c7e);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.cal-typing {
+    width: 600px;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    font-size: 2em;
+    color: #FAFAFA;
+    flex-wrap: wrap;
+    align-content: center;  
+  }

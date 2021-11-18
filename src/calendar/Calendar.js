@@ -51,9 +51,15 @@ export const  events = [
 ];
 const CalendarScreen = () => {
     return(
-        <div>
-            <Calendar localizer={localizer} events={events} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
-        </div>
+        <>
+            <div class="cal-header wrapper container">
+                <h5 class="cal-typing"> Calendar </h5>
+            </div>
+
+            <div className="post-container">
+                <Calendar localizer={localizer} events={events} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
+            </div>
+        </>
     )
 }
 

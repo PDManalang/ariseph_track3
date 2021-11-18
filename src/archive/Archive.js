@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import useFirestore from '../store/hooks/useFirestore';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import Search from '../search/search'
 
 
 import './Archive.css'
@@ -30,32 +29,33 @@ const Archive = () => {
                 </div>
             </div>
 
+            {/* Table */}
             <div className="archive-container">
                 <table className="styled-table">
-                        <thead>
-                        <tr>
-                            <th><span>Author</span></th>
-                            <th><span>File Name</span></th>
-                            <th><span>Date</span></th>
-                        </tr>
-                        </thead>
-                { docs && docs.filter((val) => {
-                    if (searchTerm == "") {
-                        return val
-                    } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                        return val
-                    }
-                }).map((doc, key) => {
-                    return ( 
-                        <tbody>
-                        <tr key={doc.id} class="active-row">
-                            <td className="file-name">{doc.authorFirstName}</td>
-                            <td><a className="file-name" href={doc.url}> {doc.name} </a></td>
-                            <td className="file-sub">{new Date(doc.createdAt.seconds * 1000).toLocaleDateString("en-US")}</td>
-                        </tr>
-                        </tbody> 
-                    );
-                })}
+                    <thead>
+                    <tr>
+                        <th><span>Author</span></th>
+                        <th><span>File Name</span></th>
+                        <th><span>Date</span></th>
+                    </tr>
+                    </thead>
+                    { docs && docs.filter((val) => {
+                        if (searchTerm == "") {
+                            return val
+                        } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            return val
+                        }
+                    }).map((doc, key) => {
+                        return ( 
+                            <tbody>
+                            <tr key={doc.id} class="active-row">
+                                <td className="file-name">{doc.authorFirstName}</td>
+                                <td><a className="file-name" href={doc.url}> {doc.name} </a></td>
+                                <td className="file-sub">{new Date(doc.createdAt.seconds * 1000).toLocaleDateString("en-US")}</td>
+                            </tr>
+                            </tbody> 
+                        );
+                    })}
                 </table>
             </div>
         </>

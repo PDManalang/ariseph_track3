@@ -75,11 +75,11 @@ function CreateAnnounce () {
                 <form onSubmit= {handleSubmit} className="white">
                     <h5 className="heading">Create New Post</h5>
                     <div className="input-field">
-                        <label htmlFor="title" className="title">Title</label>
+                        <label htmlFor="title" className="create-title">Title</label>
                         <input type="text" id="title" onChange={(e) => setCreateProject({...project,title: e.target.value})}/>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="content" className="content">Description</label>
+                        <label htmlFor="content" className="create-label">Description</label>
 
                         {/* <textarea id="content" className="content-textarea" value="{this.state.content}" onChange={this.handleChange}></textarea> */}
 
@@ -111,7 +111,7 @@ function CreateAnnounce () {
                     </div>
                     
                     <div className="tag">
-                    <label htmlFor="content" className="content">Add a Tag</label>
+                    <label htmlFor="content" className="create-label">Add a Tag</label>
                         <Tag options={options} defaultValue="Select..." onChange={onChangeInput} isMulti={true} />
                     </div>
 
