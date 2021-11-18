@@ -8,7 +8,6 @@ import useFirestore from '../store/hooks/useFirestore';
 
 function ArchiveList({projects}) {
     const { docs } = useFirestore('files');
-    console.log(docs)
     return (
         <div class="">
             <div>

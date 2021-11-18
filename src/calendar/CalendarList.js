@@ -2,34 +2,33 @@ import React from 'react'
 
 //Component
 import '../post/Summary.css'
+import { events } from './Calendar'
 
-function CalendarList() {
+function CalendarList() {    
     return (
         <div class="">
             <div class="card">
                 <div class="card-title">
-                    <h2>Tree Planting</h2>
-                </div>
-                <div class="card-body">
-                    December 13, 2021
+                    <h2>{events[0].title}</h2>
+                    <p>{events[0].start.toLocaleDateString("en-US")}</p>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-title">
-                    <h2>Lunch and Learn</h2>
-                </div>
-                <div class="card-body">
-                    November 15, 2021
+                    <h2>{events[1].title}</h2>
+                    <p>{events[1].start.toLocaleDateString("en-US")}</p>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-title">
-                    <h2>Donation Drive</h2>
+                    <h2>{events[2].title}</h2>
+                    <p>{events[2].start.toLocaleDateString("en-US")}</p>
                 </div>
-                <div class="card-body">
-                    September 23, 2021
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <h2>{events[3].title}</h2>
+                    <p>{events[3].start.toLocaleDateString("en-US")}</p>
                 </div>
             </div>
         </div>

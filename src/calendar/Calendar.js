@@ -22,7 +22,7 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
-const  events = [
+export const  events = [
 
     {
         title: "Fire Prevention Month",
@@ -50,16 +50,9 @@ const  events = [
 
 ];
 const CalendarScreen = () => {
-    const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-    const [allEvents, setAllEvents] = useState(events);
-
-    function handleAddEvent() {
-        setAllEvents([...allEvents, newEvent]);
-    }
-
     return(
         <div>
-            <Calendar localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
+            <Calendar localizer={localizer} events={events} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
         </div>
     )
 }
