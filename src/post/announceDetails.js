@@ -6,9 +6,9 @@ import { Redirect } from 'react-router-dom'
 import moment from 'moment'
 
 import './announceDetails.css';
-import useFirestore from '../store/hooks/useFirestore';
 
 import AnnounceList from './announceList';
+import ArchiveList from '../archive/ArchiveList';
 
 function AnnounceDetails(props, {projects}) {
   const { project, auth } = props;
@@ -30,10 +30,14 @@ function AnnounceDetails(props, {projects}) {
             </div>
 
               
-            <div className="right content">
-              <div className="">
-                <h2>Recent Posts</h2> 
-                <AnnounceList projects={projects} />
+            <div className="right">
+              <div className="content recent">
+                <h2>Recent Files</h2> 
+                <ArchiveList projects={projects} />
+              </div>
+              <div className="content">
+                <h2>Engagements</h2> 
+                <div id="visits"><i class="fas fa-eye"></i>...views</div>
               </div>
             </div>
           </div>
@@ -61,5 +65,7 @@ const mapStateToProps = (state, ownProps) => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "projects" }])
+  firestoreConnect([
+    { collection: 'projects', orderBy: ['createdAt', 'desc'] }
+  ])
 )(AnnounceDetails);

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import useFirestore from '../store/hooks/useFirestore';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom'
@@ -40,7 +40,7 @@ const Archive = () => {
                     </tr>
                     </thead>
                     { docs && docs.filter((val) => {
-                        if (searchTerm == "") {
+                        if (searchTerm === "") {
                             return val
                         } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                             return val

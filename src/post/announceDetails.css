@@ -23,8 +23,15 @@ body {
 .content {
     border-radius: 8px;
     padding: 20px;
+    margin-bottom: 20px;
     /* margin: 50px; */
     background-color: #FAFAFA;
+}
+
+.recent {
+    height: 50vh;
+    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .content-container {
@@ -72,7 +79,7 @@ body {
 .right {
     display: start;
     flex-direction: column;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     justify-content: space-around;
     flex: 1;
     height: 50%;
