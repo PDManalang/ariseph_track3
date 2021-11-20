@@ -39,7 +39,8 @@ const Archive = () => {
                         <th><span>Date</span></th>
                     </tr>
                     </thead>
-                    { docs && docs.filter((val) => {
+                    {/* eslint-disable-next-line */}
+                    { docs && docs.filter((val) => { 
                         if (searchTerm === "") {
                             return val
                         } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -53,8 +54,8 @@ const Archive = () => {
                                 <td><a className="file-name" href={doc.url}> {doc.name} </a></td>
                                 <td className="file-sub">{new Date(doc.createdAt.seconds * 1000).toLocaleDateString("en-US")}</td>
                             </tr>
-                            </tbody> 
-                        );
+                            </tbody>
+                        )                        
                     })}
                 </table>
             </div>
