@@ -6,8 +6,6 @@ import { Redirect } from 'react-router-dom'
 import moment from 'moment'
 
 import './announceDetails.css';
-
-import AnnounceList from './announceList';
 import ArchiveList from '../archive/ArchiveList';
 
 function AnnounceDetails(props, {projects}) {

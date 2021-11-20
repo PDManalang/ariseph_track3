@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { storage, projectFirestore, timestamp } from '../../config/firebaseConfig';
-import firebase from "firebase/compat/app";
 
 const useStorage = (file) => {
     const [progress, setProgress] = useState(0);

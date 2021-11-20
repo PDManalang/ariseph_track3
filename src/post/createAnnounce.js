@@ -7,7 +7,6 @@ import { useHistory } from 'react-router';
 import Tag from '../tags/Tag';
 import './createAnnounce.css'
 import ProgressBar from './ProgressBar';
-import { render } from '@testing-library/react';
 import { Redirect } from "react-router-dom";
 
 function CreateAnnounce () {

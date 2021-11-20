@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 //Component
-import Archive from "./Archive.js"
 import '../post/Summary.css'
 import useFirestore from '../store/hooks/useFirestore';
 
