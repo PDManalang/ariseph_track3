@@ -44,16 +44,19 @@ body {
 }
 
 .post-typing {
-    width: 800px;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    animation: animated-text 3s steps(22,end) .5s 1 normal both;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid;
     font-size: 2em;
     color: #FAFAFA;
     flex-wrap: wrap;
     align-content: center;  
 }
+
+@keyframes animated-text{
+    from{width: 0;}
+    to{width: 100%;}
+  }
 
 #content-wrapper {
     max-width: 950px;
