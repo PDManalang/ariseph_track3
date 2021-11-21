@@ -10,7 +10,7 @@ const Archive = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [sortConfig, setSortConfig] = useState('');
 
-    let sortedProducts = [...docs];
+    // let sortedProducts = [...docs];
     docs && docs.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
             return sortConfig.direction === 'ascending' ? -1 : 1;
