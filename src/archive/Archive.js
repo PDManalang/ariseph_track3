@@ -10,8 +10,6 @@ const Archive = () => {
     const { docs } = useFirestore('files');
     const [searchTerm, setSearchTerm] = useState('');
 
-    const profile = useSelector(state => state.firebase.profile)
-
     const auth = useSelector((state) => state.firebase.auth)
     if (!auth.uid) { return <Redirect to='/signin' /> }
 
@@ -52,7 +50,7 @@ const Archive = () => {
                         return ( 
                             <tbody>
                             <tr key={doc.id} class="active-row">
-                                <td className="file-name">{profile.firstName} {profile.lastName}</td>
+                                <td className="file-name">{doc.authorFirstName} {doc.authorLastName} </td>
                                 <td><a className="file-name" href={doc.url}> {doc.name} </a></td>
                                 <td className="file-sub">{new Date(doc.createdAt.seconds * 1000).toLocaleDateString("en-US")}</td>
                             </tr>
