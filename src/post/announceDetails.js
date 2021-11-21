@@ -30,7 +30,7 @@ function AnnounceDetails(props, {projects}) {
               
             <div className="right">
               <div className="content recent">
-                <h2>Recent Files</h2> 
+                <h2>Notices</h2> 
                 <ArchiveList projects={projects} />
               </div>
               <div className="content">

@@ -3,12 +3,31 @@ import useFirestore from '../store/hooks/useFirestore';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 
-
 import './Archive.css'
 
 const Archive = () => {
     const { docs } = useFirestore('files');
     const [searchTerm, setSearchTerm] = useState('');
+    const [sortConfig, setSortConfig] = useState('');
+
+    let sortedProducts = [...docs];
+    docs && docs.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+            return sortConfig.direction === 'ascending' ? -1 : 1;
+          }
+          if (a[sortConfig.key] > b[sortConfig.key]) {
+            return sortConfig.direction === 'ascending' ? 1 : -1;
+          }
+          return 0;
+        });
+    
+    const requestSort = key => {
+        let direction = 'ascending';
+        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+        }
 
     const auth = useSelector((state) => state.firebase.auth)
     if (!auth.uid) { return <Redirect to='/signin' /> }
@@ -34,9 +53,9 @@ const Archive = () => {
                 <table className="styled-table">
                     <thead>
                     <tr>
-                        <th><span>Author</span></th>
-                        <th><span>File Name</span></th>
-                        <th><span>Date</span></th>
+                        <th><button class="arch-btn" type="button" onClick={() => requestSort('authorFirstName')}>Author </button></th>
+                        <th><button class="arch-btn" type="button" onClick={() => requestSort('name')}> File Name </button></th>
+                        <th><button class="arch-btn" type="button" onClick={() => requestSort('createdAt')}>Date</button></th>
                     </tr>
                     </thead>
                     {/* eslint-disable-next-line */}
