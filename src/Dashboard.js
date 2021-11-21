@@ -28,17 +28,17 @@ class Dashboard extends Component {
             </div>
             {/* Calendar */}
             <div class="grid-item two">
-              <h2>Events</h2>
+              <h2>Calendar of Events</h2>
               <CalendarList projects={projects} />
             </div>
             {/* Post List */}
             <div class="grid-item three">
-              <h2>Posts</h2>
+              <h2>Member Feed</h2>
               <AnnounceList projects={projects} />
             </div>
             {/* Recent Files */}
             <div class="grid-item four">
-              <h2>Archive</h2>
+              <h2>Archived Files</h2>
               <ArchiveList projects={projects} />
             </div>
           </section>
